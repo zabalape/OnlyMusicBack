@@ -22,8 +22,6 @@ morganBody(app,{
 app.use('/api', indexRoute)
 app.use(cors());
 (ENGINE_DB === 'nosql') ? dbConnect() : dbConnectPg();
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 
-app.listen(port, ()=>{
-    console.log(`http://localhost:${port}`)
-})
+app.listen(port)
